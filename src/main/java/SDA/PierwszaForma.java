@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class PierwszaForma extends JFrame {
 
 
-    private JButton btn1 = new JButton("Podaj cos");
+    private JButton btn1 = new JButton("Nacisnij aby przekazac cos");
 
     private JTextField textField = new JTextField("tu cos");
 
@@ -15,59 +15,42 @@ public class PierwszaForma extends JFrame {
     DrugaForma drugaForma;
 
     public PierwszaForma() {
-        textField = new JTextField("tu cos 2");
+        textField = new JTextField("Przekaz do drugiej formatki");
+
         setTitle("pirwsza");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setLayout(null);
         setBounds(200, 200, 500, 500);
         add(btn1);
-        btn1.setBounds(10, 200, 100, 50);
+        btn1.setBounds(100, 200, 200, 50);
         add(textField);
-        textField.setBounds(200, 200, 100, 50);
+        textField.setBounds(100, 100, 200, 50);
         setVisible(true);
 
         btn1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                String drugiTextFieldGet = drugaForma.textField.getText();
+                String drugiTextFieldSet = drugaForma.textField.setText(textField.getText());
                 System.out.println(textField.getText());
-                System.out.println(drugaForma.getTextField()+" dodoaje");
-                String a = pierwszaForma.textField.getText();
-                setTextField(textField);
-                //String b = drugaForma.textField.setText(;
-                //drugaForma.textField.setText(a);
+
+
+
             }
         });
     }
 
-    public JButton getBtn1() {
-        return btn1;
-    }
 
-    public void setBtn1(JButton btn1) {
-        this.btn1 = btn1;
-    }
 
-    public JTextField getTextField() {
-        return textField;
-    }
+
+
+
 
     public void setTextField(JTextField textField) {
         this.textField = textField;
     }
 
-    public PierwszaForma getPierwszaForma() {
-        return pierwszaForma;
-    }
 
-    public void setPierwszaForma(PierwszaForma pierwszaForma) {
-        this.pierwszaForma = pierwszaForma;
-    }
 
-    public DrugaForma getDrugaForma() {
-        return drugaForma;
-    }
 
-    public void setDrugaForma(DrugaForma drugaForma) {
-        this.drugaForma = drugaForma;
-    }
 }
